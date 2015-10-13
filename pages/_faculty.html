@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC>
+<!--
+Template Name: News Magazine
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html>
+<head>
+<title>Thesis Manager System</title>
+<link rel="stylesheet" href="/static/layout/styles/layout.css" type="text/css" />
+<script type="text/javascript" src="/static/layout/scripts/jquery.min.js"></script>
+<script type="text/javascript" src='/static/chosen.proto.min.js'></script> 
+<link rel="stylesheet" type="text/css" href="/static/Pikaday/css/pikaday.css">
+<script type="text/javascript" src='/static/jquery-1.11.3.min.js'></script>
+<link rel="stylesheet" type="text/css" href="/static/chosen.min.css" />
+<script type="text/javascript" src='/static/chosen.jquery.min.js'></script>
+<!-- / Homepage Specific -->
+</head>
+<body id="top">
+<div class="wrapper col0">
+  <div id="topline">
+    <p>Welcome to THESIS ARCHIVE, {{user}}</p>
+    <ul>
+      <li class="last"> <a href="{{logout_url}}" style="float: right;">Logout</a></li>
+    </ul>
+    <br class="clear" />
+  </div>
+</div>
+<div class="bottomline">
+  	
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper">
+  <div id="header">
+    <div class="fl_left">
+      <h1><a href="index.html"><strong>T</strong>hesis <strong>M</strong>anager <strong>S</strong>ystem</a></h1>
+      <p>Develop, Design, Discover</p>
+    </div>
+    <div class="fl_right"><a href="#"><img src="/static/images/logo.gif" alt="" /></a></div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper col2">
+  <div id="topbar">
+    <div id="topnav">
+      <ul>
+      	<li><a href="/home">Thesis List</a></li>
+      	<li><a href="#">View</a>
+      	<ul>
+      		<li><a href="{{student_view_url}}">View Student List</a></li>
+      		<li><a href="#">View Faculty List</a></li>
+      		<li><a href="/university/create">View Universities</a></li>
+      		<li><a href="{{college_list_url}}">View College List</a></li>
+      	</ul>
+      	</li>
+    	<li><a href="{{thesis_create_url}}">Create Thesis</a></li>
+        <li class="active"><a href="#">Add</a>
+          <ul>
+          	<li><a href="{{faculty_create_url}}">Faculty</a></li>
+            <li><a href="/student/create">Student</a></li>
+            <li><a href="/">University</a></li>
+            <li><a href="{{college_create_url}}">College</a></li>
+            <li><a href="{{department_create_url}}">Department</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div id="search">
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Site Search</legend>
+          <input type="text" value="Search Our Website&hellip;"  onfocus="this.value=(this.value=='Search Our Website&hellip;')? '' : this.value ;" />
+          <input type="submit" name="go" id="go" value="Search" />
+        </fieldset>
+      </form>
+    </div>
+    <br class="clear" />
+  </div>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper">
+  <div class="container">
+  <h1 style="margin-left: 400px">Add Faculty</h1><br><br><br>
+  <center>
+    <div class='form-section'>
+      <form class="faculty-entry">
+          <select style="width:50px; height: 20px;margin-top:5px; margin-left: 0;" name='faculty_title' class='field'>
+            <option value=' '></option>
+            <option value='Mr.'>Mr.</option>
+            <option value='Ms.'>Ms.</option>
+            <option value='Dr.'>Dr.</option>
+            <option value='Engr.'>Engr.</option>
+            <option value='Prof.'>Prof.</option>
+          </select>
+          <input style="padding:5px; width: 175px; margin-top: 3px;" class="field faculty-fname" placeholder="FIRST NAME" name="faculty_fname" />
+          <input style="padding:5px; width: 175px; margin-top: 3px;" class="field faculty-sname" placeholder="LAST NAME" name="faculty_sname" /><br>
+          <input style="padding:5px; width: 400px; margin-top: 3px;" class='field faculty-email' placeholder='EMAIL ADDRESS' name='faculty_email' /><br>
+          <input style="padding:5px; width: 400px; margin-top: 3px;" class="field faculty-phone" placeholder="PHONE NUMBER" name="faculty_phone" /><br>
+          Birthday: <input style="padding:5px; width:125px; margin-top: 3px;" type="text" id="datepicker" name='faculty_bday'>
+          Department: <select style="width:100px; height: 20px;margin-top:5px; margin-left: 0;" class='chosen-select department-list' name='faculty_department'></select>
+          <input type="submit" value='SUBMIT' />
+      </form>
+    </div>
+    </center>
+    
+  </div>
+</div>
+
+<!-- ####################################################################################################### -->
+<div class="wrapper col8">
+  <!-- <div id="copyright"> -->
+    <center><p>Copyright &copy; 2014 - All Rights Reserved - <a href="#">Thesis Manager</a></p></center>
+    <!-- <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p> -->
+    <br class="clear" />
+  <!-- </div> -->
+</div>
+
+<script type="text/javascript" src='/static/assets-faculty.js'></script>
+<script type="text/javascript" src='/static/assets-department.js'></script>
+<script type="text/javascript" src='/static/Pikaday/pikaday.js'></script>
+<script>
+    var picker = new Pikaday({ field: document.getElementById('datepicker'),
+    yearRange: [1950, 2015] });
+</script>
+</body>
+</html>
